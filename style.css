@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: #08161f;
+    --text-color: #fff;
+    --main-color: #d1eeff;
+    --primary-color: #0c192c;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 10vh;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+.logo img{
+    width: 4rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar a {
+    font-size: 1.25rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+.container {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(
+        to bottom right,
+        red,
+        blue
+        );
+    background-size: cover;
+}
+
+#judul {
+    width: 100%;
+    height: 100vh;
+}
+
+.judul-div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 7.5%;
+}
+
+.judul-div h3 {
+    color: #0a0a0a;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: inline-block;
+    margin-bottom: 20px;
+    background: linear-gradient(
+        120deg,
+        #1c99fe 20%,
+        #7644ff 50%,
+        #fd4766 80%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: max-content;
+}
+
+.judul-div h1 {
+    color: #1f1f25;
+    font-size: 75px;
+    font-weight: 900;
+    line-height: 90px;
+    text-transform: inherit;
+    width: 70%;
+}
+
+.judul-div p {
+    width: 55%;
+    color: #202020;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.container .btn-neon {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 50px;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container .btn-neon a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 10px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+	z-index: 1;
+	transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+.container .btn-neon:hover a {
+	letter-spacing: 3px;
+}
+.container .btn-neon a::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+	transform: skewX(45deg) translate(0);
+	transition: 0.5s;
+	filter: blur(0px);
+}
+.container .btn-neon:hover a::before {
+	transform: skewX(45deg) translate(200px);
+}
+.container .btn-neon::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	bottom: -5px;
+	width: 30px;
+	height: 10px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+.container .btn-neon:hover::before /*lightup button*/ {
+	bottom: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+
+.container .btn-neon::after {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translatex(-50%);
+	top: -5px;
+	width: 30px;
+	height: 10px;
+	background: #f00;
+	border-radius: 10px;
+	transition: 0.5s;
+	transition-delay: 0.5;
+}
+.container .btn-neon:hover::after /*lightup button*/ {
+	top: 0;
+	height: 50%;
+	width: 80%;
+	border-radius: 30px;
+}
+.container .btn-neon:nth-child(1)::before, /*chnage 1*/
+.container .btn-neon:nth-child(1)::after {
+	background: #ff1f71;
+	box-shadow: 0 0 5px #ff1f71, 0 0 15px #ff1f71, 0 0 30px #ff1f71,
+		0 0 60px #ff1f71;
+}
+
+#project {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(45deg, #101010 25%, #363636 25%, #363636 50%, #101010 50%, #101010 75%, #363636 75%, #363636 100%);
+    background-size: 141.42px 141.42px;
+}
+
+.project-div {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(2.5px);
+}
+
+.card-container {
+    width: 90%;
+    max-width: 1536px;
+    position: relative;
+    height: 216px;
+    margin-top: 5rem;
+    overflow: hidden;
+    mask-image: linear-gradient(
+        to right,
+        rgba(0,0,0,0),
+        rgba(0,0,0,1) 6%,
+        rgba(0,0,0,1) 94%,
+        rgba(0,0,0,0)
+    );
+}
+
+.card-container .card {
+    width: 384px;
+    height: 216px;
+    backdrop-filter: blur(20px);
+    border-radius: 6px;
+    position: absolute;
+    left: calc(384px * 8);
+    animation-delay: calc(30s / 8 * (8 - var(--n)) * -1);
+    animation-name: scrollKiri;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    margin: 0 5px 0 5px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.card-container .card .content {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.card-container .card:hover .content {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+.card-container .card .content h2 {
+    position: absolute;
+    top: -30px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255, 255, 255, 0.05);
+    pointer-events: none;
+}
+
+.card-container .card .content  h3 {
+    font-size: 1.8em;
+    color: var(--text-color);
+    z-index: 1;
+}
+
+.card-container .card .content p {
+    font-size: 1em;
+    color: var(--text-color);
+    font-weight: 300;
+}
+
+.card-container .card .content a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    margin-top: 15px;
+    background: var(--text-color);
+    color: #000;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@keyframes scrollKiri {
+    to {
+        left: -384px
+    }
+}
+
+/* Responsive */
+@media (max-width: 1060px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 945px) {
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 17.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+}
+
+@media (max-width:426px) {
+    .judul-div {
+        padding-left:5%;
+        margin: 0;
+    }
+
+    .judul-div h3 {
+        font-size: 10px;
+    }
+
+    .judul-div h1 {
+        font-size: 25px;
+        line-height: 0px;
+        width: 100%;
+    }
+
+    .judul-div p {
+        font-size: 12.5px;
+        width: 90%;
+        margin: 20px 0 15px 0;
+    }
+
+    .container .btn-neon {
+        width: 170px;
+        height: 40px;
+    }
+
+    .btn-neon a {
+        font-size: 80%;
+    }
+}
